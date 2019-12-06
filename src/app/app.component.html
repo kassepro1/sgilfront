@@ -1,0 +1,48 @@
+
+<mat-toolbar color="warn" *ngIf="menu==false" >
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>SGLIBS</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/livreurs'"> Livreur </a>
+      <a mat-button [routerLink]="'/clients'"> Client </a>
+      <a mat-button [routerLink]="'/trajets'"> Trajet </a>
+      <a mat-button [routerLink]="'/noteclient'"> Note Client </a>
+      <a mat-button [routerLink]="'/notelivreur'"> Note Livreur </a>
+    
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+      <span style="font-size: 12px;">Plateforme d'administration</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container >
+    <mat-sidenav #sidenav  *ngIf="menu==false">
+      <mat-nav-list >
+  
+        <a mat-list-item [routerLink]="'/clients'"> Client </a>
+        <a mat-list-item [routerLink]="'/livreurs'"> Livreur  </a>
+        <a mat-list-item [routerLink]="'/trajets'"> Trajet </a>
+        <a mat-list-item [routerLink]="'/noteclient'"> Note Client </a>
+        <a mat-list-item [routerLink]="'/notelivreur'"> Note Livreur </a>
+        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content *ngIf="menu==false">
+      <div style="height: 88vh;">
+  
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <div>
+  
+    <router-outlet></router-outlet>
+  </div>

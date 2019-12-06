@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>Details Trajet</h2>
+<mat-dialog-content class="mat-typography " style="width: 800px;">
+  <div class="row col-md-12">
+
+    <form [formGroup]="trajetForm" class="addlivreur-form">
+
+      <mat-form-field class="livreur-full-width">
+        <input matInput placeholder="Lieu collecte" name="name" formControlName="lieuc" readonly >
+        <mat-error *ngIf="trajetForm.get('lieuc').invalid && processValidation" [ngClass] = "'error'"> le lieu de collecte est requis. </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="livreur-full-width">
+        <input matInput placeholder="Lieu de depot" name="lieud" formControlName="lieud"
+        readonly>
+        <mat-error *ngIf="trajetForm.get('lieud').invalid && processValidation" [ngClass] = "'error'"> le lieu de depot est requis. </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="livreur-full-width">
+        <input matInput placeholder="tel" name="tel" formControlName="tel"
+        readonly>
+        <mat-error *ngIf="trajetForm.get('tel').invalid && processValidation" [ngClass] = "'error'"> le telephone est requis. </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="livreur-full-width" >
+        <input matInput placeholder="descolis" name="descolis" formControlName="descolis" readonly>
+        <mat-error *ngIf="trajetForm.get('descolis').invalid && processValidation" [ngClass] = "'error'"> la description est requise. </mat-error>
+      </mat-form-field>
+      <mat-form-field class="livreur-full-width" >
+        <input matInput placeholder="client" name="client" formControlName="client" readonly >
+        <mat-error *ngIf="trajetForm.get('client').invalid && processValidation" [ngClass] = "'error'"> le client est requise. </mat-error>
+      </mat-form-field>
+      <mat-form-field class="livreur-full-width" >
+        <input matInput placeholder="livreur" name="livreur" formControlName="livreur" readonly>
+        <mat-error *ngIf="trajetForm.get('livreur').invalid && processValidation" [ngClass] = "'error'"> le livreur est requise. </mat-error>
+      </mat-form-field>
+      <mat-form-field class="livreur-full-width" >
+        <input matInput placeholder="telclient" name="telclient" formControlName="telclient" readonly>
+        <mat-error *ngIf="trajetForm.get('telclient').invalid && processValidation" [ngClass] = "'error'"> le livreur est requise. </mat-error>
+      </mat-form-field>
+      <mat-form-field class="livreur-full-width" >
+        <input matInput placeholder="tellivreur" name="tellivreur" formControlName="tellivreur" readonly >
+        <mat-error *ngIf="trajetForm.get('tellivreur').invalid && processValidation" [ngClass] = "'error'"> le livreur est requise. </mat-error>
+      </mat-form-field>
+
+      <div class="col-md-6"></div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fermer</button>
+</mat-dialog-actions>

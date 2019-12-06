@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>Nouveau Livreur</h2>
+<mat-dialog-content class="mat-typography " style="width: 800px;">
+  <div class="row col-md-12">
+
+                <form [formGroup]="livreurForm" class="addlivreur-form">
+
+                      <mat-form-field class="livreur-full-width">
+                        <input matInput placeholder="Nom Complet" name="name" formControlName="nomComplet" >
+                        <mat-error *ngIf="livreurForm.get('nomComplet').invalid && processValidation" [ngClass] = "'error'"> le nom complet est requis. </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="livreur-full-width">
+                        <input matInput placeholder="Email" name="mail" formControlName="email"
+                             >
+                        <mat-error *ngIf="livreurForm.get('email').invalid && processValidation" [ngClass] = "'error'"> l'email est requis. </mat-error>
+                      </mat-form-field>
+
+
+                      <mat-form-field class="livreur-full-width">
+                        <input matInput placeholder="téléphone" name="tel" formControlName="tel"
+                                >
+                        <mat-error *ngIf="livreurForm.get('tel').invalid && processValidation" [ngClass] = "'error'"> le telephone est requise. </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="livreur-full-width" >
+                        <input matInput placeholder="NIN" name="cni" formControlName="cni" >
+                        <mat-error *ngIf="livreurForm.get('cni').invalid && processValidation" [ngClass] = "'error'"> le NIN est requis. </mat-error>
+                      </mat-form-field>
+
+
+                      <mat-form-field class="livreur-full-width" >
+                        <input matInput placeholder="Matricule vehicule" formControlName="matricule" >
+                        <mat-error *ngIf="livreurForm.get('matricule').invalid && processValidation" [ngClass] = "'error'"> le matricule du vehicule est requise. </mat-error>
+                      </mat-form-field>
+                    <mat-form-field class="livreur-full-width">
+                      <input matInput placeholder="Description vehicule" formControlName="description" >
+                      <mat-error *ngIf="livreurForm.get('description').invalid && processValidation" [ngClass] = "'error'"> la description du vehicule est requise. </mat-error>
+                    </mat-form-field>
+
+                  <div class="col-md-6"></div>
+                </form>
+              </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="addLivreur()">Enregistrer</button>
+  <button mat-button mat-dialog-close>Fermer</button>
+</mat-dialog-actions>

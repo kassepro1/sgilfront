@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Modifier Trajet</h2>
+<mat-dialog-content class="mat-typography " style="width: 800px;">
+  <div class="row col-md-12">
+
+    <form [formGroup]="trajetForm" class="addlivreur-form">
+
+      <mat-form-field class="livreur-full-width">
+        <input matInput placeholder="Lieu collecte" name="name" formControlName="lieuc" >
+        <mat-error *ngIf="trajetForm.get('lieuc').invalid && processValidation" [ngClass] = "'error'"> le lieu de collecte est requis. </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="livreur-full-width">
+        <input matInput placeholder="Lieu de depot" name="lieud" formControlName="lieud"
+        >
+        <mat-error *ngIf="trajetForm.get('lieud').invalid && processValidation" [ngClass] = "'error'"> le lieu de depot est requis. </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="livreur-full-width">
+        <input matInput placeholder="tel" name="tel" formControlName="tel"
+        >
+        <mat-error *ngIf="trajetForm.get('tel').invalid && processValidation" [ngClass] = "'error'"> le telephone est requis. </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="livreur-full-width" >
+        <input matInput placeholder="descolis" name="descolis" formControlName="descolis" >
+        <mat-error *ngIf="trajetForm.get('descolis').invalid && processValidation" [ngClass] = "'error'"> la description est requise. </mat-error>
+      </mat-form-field>
+
+      <div class="col-md-6"></div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="updateTrajet()">Enregistrer</button>
+  <button mat-button mat-dialog-close>Annuler</button>
+</mat-dialog-actions>

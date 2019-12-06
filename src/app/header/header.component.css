@@ -1,0 +1,25 @@
+a{
+  color: #ffffff;
+  font-size: 20px;
+  padding: 14px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+  font-size: 25px;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+/* selected link */
+a.active {
+  color: hotpink;
+  font-size: 25px;}
